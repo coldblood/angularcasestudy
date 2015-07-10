@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Angular Case Study</title>
+	<link rel="stylesheet" href="bootstrap.css" />
+	<link rel="stylesheet" href="ngGrid.css" />
+	<link rel="stylesheet" href="custom.css" />
+	<script type="text/javascript" src="lib/jquery.js"></script>
+	<script type="text/javascript" src="lib/bootstrap.js"></script>
+	<script type="text/javascript" src="lib/angular.js"></script>
+	<script type="text/javascript" src="lib/router.min.js"></script>
+	<script type="text/javascript" src="lib/ng-grid-2.0.14.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="src/ServicesModule.js"></script>
+	<script type="text/javascript" src="src/Utilities.js"></script>
+</head>
+<body ng-app="main" style="padding:8px">
+	<nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Angular Case Study</a>
+        </div>
+   
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="user">User</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<div class="container">
+		<div ui-view></div>
+	</div>
+</body>
+</html>

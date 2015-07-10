@@ -1,0 +1,45 @@
+<div>
+	<form class="well" name="userForm">
+		<div class="form-group">
+  			<label for="name">Name:</label>
+  			<input type="text" class="form-control" id="name" ng-model="user.name" name="userName" required>
+  			<span class="label label-warning" ng-show="userForm.userName.$error.required">User name is required</span>
+		</div>
+		<div class="form-group">
+  			<label for="age">Age:</label>
+			<input type="number" class="form-control" id="age" name="age" ng-model="user.age" ng-change="validateAge(userForm,userForm.age)" required>
+			<span class="label label-warning" ng-show="userForm.age.$error.age">Age should be positive</span>
+			<span class="label label-warning" ng-show="userForm.age.$error.required">Age is required</span>
+		</div>
+		<div class="form-group">
+			<label>Gender:</label>
+			<div class="radio" ng-repeat="gdr in genders">
+  				<label><input type="radio" name="gender" ng-value="gdr" ng-model="user.gender" >{{gdr.label}}
+  				</label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label>Skills:</label>
+			<div class="checkbox" ng-repeat="itr in allSkills">
+  				<label><input type="checkbox" name="skills" ng-value='itr' ng-model="user.selectedSkills[$index]">{{itr}}
+  				</label>
+			</div>
+		</div>
+		<div class="form-group">
+		  <label for="sel1">Select grade:</label>
+		  <select class="form-control" id="sel1" ng-model="user.grade">
+		  	<option ng-repeat="gd in grades" ng-value="gd">{{gd}}</option>
+		  </select>
+		</div>
+		<div class="form-group">
+		  <label for="sel1">Select Color:</label>
+		  <select class="form-control" id="sel1" ng-model="user.color" ng-options='clr.color group by clr.shade for clr in colors'>
+		  	<option value=''>-- choose a color --</option>
+		  </select>
+		</div>
+		<button ng-click="save()" class="btn btn-primary" ng-disabled="userForm.$invalid">Save</button>
+	</form>
+	Users : {{users.length}} | Search : <input ng-model='searchText' />
+	<hr/>
+	<div ui-view='list'></div>
+</div>

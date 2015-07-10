@@ -1,0 +1,8 @@
+{
+	"colors":[
+		{"color":"white","shade":"light"},
+		{"color":"black","shade":"dark"},
+		{"color":"violet","shade":"dark"},
+		{"color":"blue","shade":"light"}
+	]
+}

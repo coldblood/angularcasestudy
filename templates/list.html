@@ -1,0 +1,15 @@
+<h5>Using list</h5>
+<ul class="list-group">
+	<li ng-repeat="user in users | filter: searchText" class="list-group-item">
+		{{user.name | ellipsis:5}} - <span ng-bind="user.age + ' yrs'" style="font-size:11px"></span> ({{user.gender.label}})
+		<button ng-click="delete($index)" class="btn btn-danger pull-right">Delete</button>	
+		<h4>Grade: {{user.grade}}</h4>
+		<h4>Color: {{user.color.color}}</h4>
+		<h4>Skills</h4>
+		<ul class="list-group">
+			<li ng-repeat="skill in allSkills" class="list-group-item" ng-show="user.selectedSkills[$index]">
+			{{skill}}
+			</li>
+		</ul>
+	</li>
+</ul>
